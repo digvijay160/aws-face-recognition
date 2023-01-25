@@ -55,7 +55,7 @@ def lambda_handler(event,context):
             faceId=response['FaceRecords'][0]['Face']['FaceId']
 
             ret=s3.head_object(Bucket=bucket,Key=key)
-            personFullName=ret['MetaData']['FullName']
+            personFullName=ret['Metadata']['FullName']
 
             update_index('face_recognition',faceId,personFullName)
         

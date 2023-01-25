@@ -1,0 +1,39 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::face-rec-pics/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem"
+            ],
+            "Resource": [
+                "arn:aws:dynamodb:ap-south-1:782797151501:table/face_recognition"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "rekognition:IndexFaces"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
