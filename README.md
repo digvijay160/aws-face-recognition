@@ -6,4 +6,4 @@
 The image of a famous person given by the user is identified by the program.
 
 In the background, the image is detected by Amazon Rekognition and compared with the dataset in its Collection and in the DynamoDB table.
-The dataset is created by uploading images of famous people, and helping Rekognition "learn" the faceprints.
+The dataset is created by uploading images of famous people in S3 bucket, and helping Rekognition "learn" the faceprints and sync it with DynamoDB table.
