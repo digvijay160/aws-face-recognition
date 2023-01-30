@@ -1,3 +1,5 @@
+//CLI COMMANDS
+
 //TO CREATE AMAZON REKOGNITION COLLECTION
 
 aws rekognition create-collection --collection-id face_rec_collection --region ap-south-1

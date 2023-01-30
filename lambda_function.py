@@ -1,7 +1,6 @@
 import boto3
 from decimal import Decimal
 import json
-import urllib
 
 dynamodb=boto3.client('dynamodb')
 s3=boto3.client('s3')
