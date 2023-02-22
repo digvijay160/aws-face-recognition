@@ -1,10 +1,9 @@
-# aws-face-recognition
+# AWS Face Recognition
 
-###############   This is a Face Recognition Project using AWS   ###################
+- This is a Face Recognition Project using AWS
 
 
 The image of a famous person given by the user is identified by the program.
-
 
 In the background, the image is detected by Amazon Rekognition and compared with the dataset in its Collection and in the DynamoDB table.
 
