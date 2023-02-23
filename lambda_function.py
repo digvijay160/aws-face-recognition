@@ -1,6 +1,7 @@
 import boto3
 from decimal import Decimal
 import json
+import urllib
 
 dynamodb=boto3.client('dynamodb')
 s3=boto3.client('s3')
@@ -40,8 +41,8 @@ def lambda_handler(event,context):
 
     #extracts bucket and its key where image is uploaded
     bucket=event['Records'][0]['s3']['bucket']['name']
-    print("Recors: ",event['Records'])
-    key=event['Recors'][0]['s3']['object']['key']
+    print("Records: ",event['Records'])
+    key=event['Records'][0]['s3']['object']['key']
     print("Key: ",key)
 
     try:
@@ -54,7 +55,7 @@ def lambda_handler(event,context):
             faceId=response['FaceRecords'][0]['Face']['FaceId']
 
             ret=s3.head_object(Bucket=bucket,Key=key)
-            personFullName=ret['Metadata']['FullName']
+            personFullName=ret['Metadata']['fullname']
 
             update_index('face_recognition',faceId,personFullName)
         
